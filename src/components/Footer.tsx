@@ -1,30 +1,57 @@
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Instagram, 
-  Facebook, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Instagram,
+  Facebook,
   Youtube,
   MessageCircle,
   Mic
 } from 'lucide-react';
+import { SiTiktok } from 'react-icons/si'; // ← Tambahkan ini
 
 const Footer = () => {
   const socialLinks = [
-    { icon: Instagram, href: '#', label: 'Instagram', color: 'hover:text-accent' },
-    { icon: Facebook, href: '#', label: 'Facebook', color: 'hover:text-primary' },
-    { icon: Youtube, href: '#', label: 'YouTube', color: 'hover:text-red-500' },
-    { icon: MessageCircle, href: '#', label: 'WhatsApp', color: 'hover:text-green-500' },
+    {
+      icon: Instagram,
+      href: 'https://www.instagram.com/masterpiecelegendstyleroxy?igsh=azk2Y3hmbWMxd2Fq',
+      label: 'Instagram',
+      color: 'hover:text-accent'
+    },
+    {
+      icon: Facebook,
+      href: '#',
+      label: 'Facebook',
+      color: 'hover:text-primary'
+    },
+    {
+      icon: Youtube,
+      href: '#',
+      label: 'YouTube',
+      color: 'hover:text-red-500'
+    },
+    {
+      icon: MessageCircle,
+      href: 'https://wa.me/6281911511918',
+      label: 'WhatsApp',
+      color: 'hover:text-green-500'
+    },
+    {
+      icon: SiTiktok,
+      href: 'https://www.tiktok.com/@masterpiece.legendroxy?_t=ZS-8yXRSlQqPGa&_r=1',
+      label: 'TikTok',
+      color: 'hover:text-pink-500'
+    }
   ];
 
   const quickLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Room Types', href: '#rooms' },
     { name: 'Promotions', href: '#promo' },
-    { name: 'Booking', href: '#booking' },
+    { name: 'Booking', href: '#booking' }
   ];
 
   const services = [
@@ -33,7 +60,7 @@ const Footer = () => {
     'Corporate Bookings',
     'Birthday Packages',
     'Group Reservations',
-    'Food & Beverage',
+    'Food & Beverage'
   ];
 
   return (
@@ -63,6 +90,8 @@ const Footer = () => {
                   <a
                     key={social.label}
                     href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className={`text-muted-foreground ${social.color} transition-colors p-2 rounded-lg hover:bg-muted/20`}
                     aria-label={social.label}
                   >
@@ -100,9 +129,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-muted-foreground">
-                    {service}
-                  </span>
+                  <span className="text-muted-foreground">{service}</span>
                 </li>
               ))}
             </ul>
@@ -138,7 +165,12 @@ const Footer = () => {
                 <Mail className="w-5 h-5 text-accent mr-3" />
                 <div>
                   <p className="text-foreground font-medium">Email</p>
-                  <p className="text-muted-foreground text-sm">info@masterpieceroxy.com</p>
+                  <a
+                    href="mailto:legendstylebiak@gmail.com"
+                    className="text-muted-foreground text-sm hover:text-primary transition-colors"
+                  >
+                    legendstylebiak@gmail.com
+                  </a>
                 </div>
               </div>
 
@@ -175,9 +207,11 @@ const Footer = () => {
           </div>
 
           <div className="mt-6 md:mt-0">
-            <Button variant="premium" size="sm">
-              <MessageCircle className="w-4 h-4 mr-2" />
-              WhatsApp Us
+            <Button variant="premium" size="sm" asChild>
+              <a href="https://wa.me/6281911511918" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4 mr-2" />
+                WhatsApp Us
+              </a>
             </Button>
           </div>
         </div>
